@@ -1,0 +1,8 @@
+@startuml
+group sd ViewProducts
+  [->System:ViewProducts()
+  [<-System:ProductlistRequest(name,price,stock availability)
+  [-->System:return ProductlistRequest()
+ [<-System:ProvideProductInformation()
+end
+@enduml

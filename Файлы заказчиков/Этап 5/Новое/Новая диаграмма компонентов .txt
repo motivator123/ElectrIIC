@@ -1,0 +1,25 @@
+@startuml
+[Физическое лицо] -down0)- [Клиент] : Человек
+[Компания] -left0)- [Клиент] : Организация
+[Чат с клиентом] -left0)- [Клиент] : Общение перед заказом товара/услуги
+[Оплата] -left0)- [Клиент] : Организация
+[Клиент] -down0)- System: получение данных о услугах
+[Клиент] -down0)- System: получение данных о товарах
+[Клиент] -up0)- System: история заказов
+[Клиент] -up(0- System: товары и услуги
+[Клиент] -down0)- System: получение данных о клиенте
+node "Server srorage" {
+database "System" {
+    storage User
+    storage Admin
+    storage All_orders
+ }
+}
+database "Chat_System" {
+    
+    storage Admin_chat
+    
+ }
+[Чат с клиентом] -down0)-  Chat_System: общение 
+[Оплата] -down0)-  System: выбранная оплата
+@enduml

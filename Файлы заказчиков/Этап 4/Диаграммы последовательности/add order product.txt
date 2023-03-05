@@ -1,0 +1,16 @@
+@startuml
+group sd Add order
+  [->System:Product()
+  [<-System:dataRequest(quantity,accept button)
+  [-->System:return dataRequest()
+  System<-System:checkData()
+  break checkData()==false
+    loop (1,3) checkData()==false
+      [<-System:closeWindow()
+    end
+  end
+  [<-System:addOrder()
+  [<-System:showMessage(addComplete)
+  System->]:close add window
+end
+@enduml

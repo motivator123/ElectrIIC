@@ -1,0 +1,41 @@
+@startuml
+state user{
+state SigningUp{
+  state "Start" as StartSU
+  StartSU:entry / show sign up window
+  StartSU: do / ask for email and password
+  [*]-->StartSU
+  state "Check" as CheckSU
+  StartSU-->CheckSU:data input
+  CheckSU:entry / check input data
+  state c <<choice>>
+  CheckSU-->c
+  StartSU<--c:input data is incorrect
+  state "Finish" as FinishSU
+  c-->FinishSU:input data is correct
+  FinishSU:entry / create account
+  FinishSU: exit / give access to account
+  FinishSU: exit / show success message
+  FinishSU: exit / closeWindow()
+  FinishSU-->[*]
+}
+state SigningIn{
+  Start:entry / show sign in window
+  Start: do / ask for email and password
+  [*]-->Start
+  Start-->Check:data input
+  Check:entry / check input data
+  state ch <<choice>>
+  Check-->ch
+  Start<--ch:input data is incorrect
+  ch-->Finish:input data is correct
+  Finish: entry / give access to account
+  Finish: exit / show success message
+  Finish: exit / closeWindow()
+  Finish-->[*]
+}
+[*]-->SigningUp
+[*]-->SigningIn
+}
+
+@enduml

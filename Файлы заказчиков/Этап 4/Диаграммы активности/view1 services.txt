@@ -1,0 +1,13 @@
+@startuml
+(*)-->"Click Services button"
+-->Request Services list
+-->View Services information
+if ""
+  -->Name
+   -->Providing a services information
+   -->(*)
+else
+  -->Price
+   -->Providing a services information
+   -->(*)
+@enduml
