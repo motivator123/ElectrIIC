@@ -37,12 +37,6 @@ header {
     text-align: right;
   }
 
-  .container2 {
-    max-width: 1170px;
-    margin: 0 auto;
-    padding: 20px 0;
-  }
-
   .popular-categories {
     font-size: 60px;
     font-weight: bold;
@@ -88,6 +82,25 @@ header {
 
 .popup.active, .overlay.active {
     display: block;
+}
+
+.form-container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+.form-group label {
+  font-weight: bold;
+}
+.btn-register {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+.btn-register:hover {
+  background-color: #0062cc;
+  border-color: #0062cc;
+}
+.btn-register:focus, .btn-register.focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
 }
 
   
