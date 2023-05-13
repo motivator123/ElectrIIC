@@ -1,0 +1,14 @@
+@startuml
+(*)-->"Product selection"
+-->Request the quantity of the product
+-->Enter quantity
+
+if "acception request"
+-->[true]Add product to cart
+-->Show success message
+-->(*)
+else
+-->[false]Close adding window
+-->(*)
+
+@enduml

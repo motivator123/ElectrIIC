@@ -1,0 +1,39 @@
+@startuml
+
+artifact server{
+node "Среда Выполенения" as A{
+artifact Заказ
+
+
+artifact Склад
+artifact Услуги
+artifact ЮрЛицо
+artifact ФизЛицо
+artifact Товар
+artifact Сотрудник
+
+
+Заказ <.up. Склад
+Заказ <.up.Сотрудник
+Заказ .up.>Услуги
+Заказ .right.> ЮрЛицо
+Заказ .down.> ФизЛицо
+Заказ .up.> Товар
+
+}
+}
+cloud   {
+database "База Данных" as B
+}
+node {
+artifact "Web-версия" as C
+}
+
+
+
+C -- server
+
+B -- server
+
+
+@enduml

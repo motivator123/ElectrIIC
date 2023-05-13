@@ -1,0 +1,31 @@
+@startuml
+
+state user{
+State "Product overview" as view
+view: entry / openWindow()
+view: do / press add to cart button
+view: exit / closeWindow()
+[*]-->view: product icon pressed
+state "Add product to cart" as add
+add: entry / openWindow()
+add: do / choose amount
+add: exit / closeWindow()
+view-->add  : press addToCart buton
+view-->[*]: press close button
+view<--add: press close buton
+state c <<choice>>
+add-->c: press confirm button
+state "Add new product" as addNew
+addNew: entry / createUnit(productInOrder)
+addNew: exit / closeWindow()
+view<--addNew
+increase: entry / productInOrder(product.id).amount++
+increase: exit / closeWindow()
+view<--increase
+state "Add existing product" as increase
+c-->addNew: productInOrder not exists
+c--> increase: productInOrder exists
+
+
+
+@enduml

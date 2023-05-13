@@ -1,0 +1,11 @@
+@startuml
+state ViewProduct{
+  Start:entry / show Productlist window
+  Start: do / Show name, price, stock availability for each product
+  [*]-->Start   
+  Start-->Finish
+  Finish: exit / Provide the customer with product information
+  Finish-->[*]
+}
+[*]-->ViewProduct
+@enduml
