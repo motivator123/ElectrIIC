@@ -1,8 +1,0 @@
-@startuml
-group sd ViewServices
-  [->System:ViewServices()
-  [<-System:ServicelistRequest(name,price)
-  [-->System:return ServiceslistRequest()
- [<-System:ProvideServiceInformation()
-end
-@enduml
