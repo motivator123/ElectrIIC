@@ -1,0 +1,121 @@
+{% extends 'main/layout.html' %}
+
+{% load static %}
+
+{% block reg %}
+<div class="col-md-3">
+    <div class="login-register">
+      <div class="popup" id="popup">
+          <form>
+            <img class="col-mb-3" src="Pictures/Logo.png" alt="">
+            <h1 class="h3 mb-3 fw-normal">Авторизация</h1>
+        
+            <div class="form-floating">
+              <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+              <label for="floatingInput">Email почта</label>
+            </div>
+            <div class="form-floating">
+              <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+              <label for="floatingPassword">Пароль</label>
+            </div>
+        
+            <div class="checkbox mb-3">
+              <label>
+                <input type="checkbox" value="remember-me"> Запомнить меня
+              </label>
+            </div>
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Войти</button>
+            <p class="mt-5 mb-3 text-body-secondary">© 2023 ElectricIIC</p>
+          </form>
+        </div>
+      <div class="overlay" id="overlay"></div>
+      <a href="#" class="btn btn-outline-secondary" id="button-login">Войти</a>
+      <script>
+          var buttonLogin = document.getElementById('button-login');
+          var overlay = document.getElementById('overlay');
+          var popup = document.getElementById('popup');
+  
+          buttonLogin.addEventListener('click', function() {
+              overlay.classList.add('active');
+              popup.classList.add('active');
+          });
+  
+          overlay.addEventListener('click', function() {
+              overlay.classList.remove('active');
+              popup.classList.remove('active');
+          });
+      </script>
+      <a href="{% url 'register' %}" class="btn btn-primary">Зарегистрироваться</a>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="popular-categories">Популярные категории</div>
+    <div class="row">
+        <div class="col-md-2">
+            <button class="btn btn-primary btn-big">
+                <img src="{% static 'main/Pictures/note.png' %}" alt="Ноутбуки">
+            </button>
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-primary btn-big">
+                <img src="{% static 'main/Pictures/LE24B8000T_m.png' %}" alt="Телевизоры">
+            </button>
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-primary btn-big">
+                <img src="{% static 'main/Pictures/telephones_250x200_210.png' %}" alt="Смартфоны">
+            </button>
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-primary btn-big">
+                <img src="{% static 'main/Pictures/Chto-takoe-konfigura-200x200h.png' %}" alt="Компьютеры">
+            </button>
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-primary btn-big">
+                <img src="{% static 'main/Pictures/16KG-200x200.png' %}" alt="Стиральные машины">
+            </button>
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-primary btn-big">
+                <img src="{% static 'main/Pictures/52406-1-refrigerator-png-download-free-thumb.png' %}" alt="Холодильники">
+            </button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <button class="btn btn-primary btn-big">
+                <img src="{% static 'main/Pictures/note.png' %}" alt="Ноутбуки">
+            </button>
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-primary btn-big">
+                <img src="{% static 'main/Pictures/LE24B8000T_m.png' %}" alt="Телевизоры">
+            </button>
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-primary btn-big">
+                <img src="{% static 'main/Pictures/telephones_250x200_210.png' %}" alt="Смартфоны">
+            </button>
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-primary btn-big">
+                <img src="{% static 'main/Pictures/Chto-takoe-konfigura-200x200h.png' %}" alt="Компьютеры">
+            </button>
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-primary btn-big">
+                <img src="{% static 'main/Pictures/16KG-200x200.png' %}" alt="Стиральные машины">
+            </button>
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-primary btn-big">
+                <img src="{% static 'main/Pictures/52406-1-refrigerator-png-download-free-thumb.png' %}" alt="Холодильники">
+            </button>
+        </div>
+    </div>
+</div>
+{% endblock %}
