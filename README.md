@@ -1,5 +1,3 @@
-# ElectricIIC  
-
 <h1 align="center">ElectrIIC</h1>
 
 ## Описание
