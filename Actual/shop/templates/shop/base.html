@@ -38,6 +38,19 @@
           </swiper-container>
           </div>
           {% block reg %}
+          <div class="col-md-3">
+            {% if request.user.is_authenticated %}
+            <div class="login-register">
+                {{ user.username }}
+              <a href="{% url 'logout' %}" class="btn btn-outline-secondary" id="button-login">Выйти</a>
+            </div>
+            {% else %}
+            <div class="login-register">
+                <a href="{% url 'login' %}" class="btn btn-outline-secondary" id="button-login">Войти</a>
+                <a href="{% url 'signup' %}" class="btn btn-primary">Зарегистрироваться</a>
+              </div>
+            {% endif %}
+        </div>
           {% endblock %}
         </div>
       </div>

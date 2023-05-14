@@ -4,49 +4,17 @@
 
 {% block reg %}
 <div class="col-md-3">
+    {% if request.user.is_authenticated %}
     <div class="login-register">
-      <div class="popup" id="popup">
-          <form>
-            <img class="col-mb-3" src="Pictures/Logo.png" alt="">
-            <h1 class="h3 mb-3 fw-normal">Авторизация</h1>
-        
-            <div class="form-floating">
-              <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-              <label for="floatingInput">Email почта</label>
-            </div>
-            <div class="form-floating">
-              <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-              <label for="floatingPassword">Пароль</label>
-            </div>
-        
-            <div class="checkbox mb-3">
-              <label>
-                <input type="checkbox" value="remember-me"> Запомнить меня
-              </label>
-            </div>
-            <button class="w-100 btn btn-lg btn-primary" type="submit">Войти</button>
-            <p class="mt-5 mb-3 text-body-secondary">© 2023 ElectricIIC</p>
-          </form>
-        </div>
-      <div class="overlay" id="overlay"></div>
-      <a href="#" class="btn btn-outline-secondary" id="button-login">Войти</a>
-      <script>
-          var buttonLogin = document.getElementById('button-login');
-          var overlay = document.getElementById('overlay');
-          var popup = document.getElementById('popup');
-  
-          buttonLogin.addEventListener('click', function() {
-              overlay.classList.add('active');
-              popup.classList.add('active');
-          });
-  
-          overlay.addEventListener('click', function() {
-              overlay.classList.remove('active');
-              popup.classList.remove('active');
-          });
-      </script>
-      <a href="{% url 'register' %}" class="btn btn-primary">Зарегистрироваться</a>
+        {{ user.username }}
+      <a href="{% url 'logout' %}" class="btn btn-outline-secondary" id="button-login">Выйти</a>
     </div>
+    {% else %}
+    <div class="login-register">
+        <a href="{% url 'login' %}" class="btn btn-outline-secondary" id="button-login">Войти</a>
+        <a href="{% url 'signup' %}" class="btn btn-primary">Зарегистрироваться</a>
+      </div>
+    {% endif %}
 </div>
 {% endblock %}
 
