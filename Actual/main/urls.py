@@ -8,5 +8,6 @@ urlpatterns = [
     path('register', views.registration, name = 'register'),
     path('faq', views.faq, name = 'faq'),
     path('communication', views.communication, name = 'communication'),
-    path('about', views.about, name = 'about')
+    path('about', views.about, name = 'about'),
+    path('catalog', include('shop.urls',  namespace = 'shop'))
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

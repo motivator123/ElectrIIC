@@ -17,4 +17,4 @@ def product_detail(request, id, slug):
     """ Страница продукта"""
     product = get_object_or_404(Product, id=id, slug=slug, available=True)
     context = {'product': product}
-    return render(request, 'shop/list.html', context)
+    return render(request, 'shop/detail.html', context)
