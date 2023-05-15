@@ -43,3 +43,13 @@ class Product(models.Model):
 
     def get_absolute_url(self):
             return reverse('shop:product_detail', args=[self.id, self.slug])
+    
+
+class Zakaz(models.Model):
+    name = models.CharField(max_length=35,verbose_name='Имя')
+    number = models.BigIntegerField(verbose_name='Телефон')   
+
+    class Meta:
+        ordering = ('name',)
+        verbose_name = 'Заказ'
+        verbose_name_plural = 'Заказы'
