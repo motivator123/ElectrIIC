@@ -30,7 +30,7 @@
 
 
 
-### Планировщик задач  
+### Планировщик задач:  
 https://github.com/users/motivator123/projects/1  
 
 
